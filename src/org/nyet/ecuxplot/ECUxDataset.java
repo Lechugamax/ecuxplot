@@ -618,6 +618,13 @@ public class ECUxDataset extends Dataset {
 	    String l = "ft-lb";
 	    if(this.env.sae.enabled()) l += " (SAE)";
 	    c = new Column(id, l, value);
+	} else if(id.equals("TQ(Nm)")) {
+		final DoubleArray hp = this.get("HP").data;
+		final DoubleArray rpm = this.get("RPM").data;
+		final DoubleArray value = hp.mult(5252).div(rpm).div(0.7375621483);
+		String l = "Nm";
+		if(this.env.sae.enabled()) l += " (SAE)";
+		c = new Column(id, l, value);
 	} else if(id.equals("Drag")) {
 	    final DoubleArray v = this.get("Calc Velocity").data;
 	    final DoubleArray drag = this.drag(v);

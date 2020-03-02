@@ -120,6 +120,7 @@ public class AxisMenu extends JMenu {
 	    addToSubmenu("Calc Power", "WTQ");
 	    addToSubmenu("Calc Power", "HP");
 	    addToSubmenu("Calc Power", "TQ");
+		addToSubmenu("Calc Power", "TQ(Nm)");
 	    addToSubmenu("Calc Power", "Drag");
 
 	    addToSubmenu("Calc Power", new JSeparator());
